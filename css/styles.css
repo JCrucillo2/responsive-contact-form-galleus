@@ -1,0 +1,281 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-color: #262626;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav-branding {
+  font-size: 2rem;
+}
+
+.nav-link {
+  transition: 0.7s ease;
+}
+
+.nav-link:hover {
+  color: dodgerblue;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  background-color: #ffffff;
+}
+
+/* form area */
+.form-heading {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2.5rem;
+}
+
+.form-divider {
+  display: flex;
+}
+
+.form-main {
+  flex: 0 1 50%;
+  padding-right: 16px;
+}
+
+.form-spill {
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.form-main input,
+.form-main textarea {
+  padding: 10px;
+  margin-bottom: 16px;
+  border-radius: 5px;
+  border: 1px solid #262626;
+}
+
+.form-main input:focus,
+.form-main textarea:focus {
+  outline-color: dodgerblue;
+  background-color: lightblue;
+}
+
+.form-main textarea {
+  resize: none;
+}
+
+.contact-side-image {
+  flex: 0 1 50%;
+  background-image: url(https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80);
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px 5px 0 0;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1.125rem;
+}
+
+.contact-button {
+  margin: 16px auto;
+  width: 30%;
+  border: none;
+  background-color: #262626;
+  color: #ffffff;
+  padding: 16px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: dodgerblue;
+}
+
+footer {
+  background-color: #262626;
+  padding: 16px;
+  color: #ffffff;
+}
+
+.footer-control {
+  display: flex;
+  margin-bottom: 32px;
+  gap: 100px;
+  font-size: 0.875rem;
+}
+
+.footer-control h3,
+.footer-control ul li {
+  margin-bottom: 16px;
+}
+
+.footer-control ul li a {
+  text-decoration: underline;
+  transition: 0.7s ease;
+}
+
+.footer-control ul li a:hover {
+  color: dodgerblue;
+}
+
+.copyright-section {
+  justify-content: space-between;
+}
+
+.copyright-section,
+.footer-legal {
+  display: flex;
+}
+
+.footer-legal {
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-legal li::before {
+  content: "|";
+  padding-right: 10px;
+}
+
+.footer-legal li a {
+  transition: 0.7s ease;
+}
+
+.footer-legal li a:hover {
+  text-decoration: underline;
+  color: dodgerblue;
+}
+
+.footer-legal li:nth-child(1)::before {
+  content: "";
+}
+
+.copyright-section {
+  font-size: 0.75rem;
+  margin-top: 32px;
+}
+
+hr {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  height: 1px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #262626;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .form-main {
+    padding-left: 16px;
+  }
+
+  .form-divider {
+    display: block;
+  }
+
+  .contact-side-image {
+    height: 200px;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 468px) {
+  .footer-control,
+  .copyright-section {
+    display: block;
+  }
+
+  .copyright-section {
+    margin-top: 16px;
+  }
+
+  .copyright-section p {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+}
